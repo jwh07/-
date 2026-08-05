@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나를 소개하는 방</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- 첫 화면 (내 사진) -->
+    <!-- ========================= -->
+
+    <section id="introPage">
+
+        <img src="myphoto.png" id="myPhoto">
+
+        <!-- 얼굴 -->
+        <button id="faceBtn"></button>
+
+        <!-- 몸 -->
+        <button id="bodyBtn"></button>
+
+        <!-- 방으로 이동 -->
+        <button id="enterRoom">
+            🏠 내 방 둘러보기
+        </button>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- 방 화면 -->
+    <!-- ========================= -->
+
+    <section id="roomPage">
+
+        <img src="room.png" id="roomImage">
+
+        <!-- 컴퓨터 -->
+        <button class="roomBtn" id="computerBtn"></button>
+
+        <!-- 침대 -->
+        <button class="roomBtn" id="bedBtn"></button>
+
+        <!-- 책장 -->
+        <button class="roomBtn" id="bookBtn"></button>
+
+        <!-- 목표 -->
+        <button class="roomBtn" id="goalBtn"></button>
+
+        <!-- 프로필로 -->
+        <button id="profileBtn">
+            👤
+        </button>
+
+    </section>
+
+
+
+
+    <!-- ========================= -->
+    <!-- 공통 정보창 -->
+    <!-- ========================= -->
+
+    <div id="modal">
+
+        <div id="modalBox">
+
+            <button id="closeBtn">
+                ✕
+            </button>
+
+            <div id="modalContent">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
