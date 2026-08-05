@@ -3,227 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자소서 - 전원희/title>
+    <title>PROFILE | ISTJ</title>
     <style>
-        /* CSS 변수 설정 (라이트 / 다크 모드) */
         :root {
-            --bg-color: #ffffff;
-            --text-color: ##006AFFFF;
-            --card-bg: #f8f9fa;
-            --primary-color: #4a90e2;
-            --border-color: #e0e0e0;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --badge-bg: #334155;
+            --border: #334155;
         }
 
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #f0f0f0;
-            --card-bg: #2d2d2d;
-            --primary-color: #64b5f6;
-            --border-color: #404040;
-        }
-
-        /* 기본 스타일 리셋 */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s, color 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* 네비게이션 바 */
-        header {
-            position: sticky;
-            top: 0;
-            background-color: var(--bg-color);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+            color: var(--text-primary);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* 다크 모드 토글 버튼 */
-        .theme-btn {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        /* 메인 레이아웃 */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h1, h2 {
-            margin-bottom: 1rem;
-        }
-
-        /* Hero 섹션 */
-        .hero {
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #777;
-        }
-
-        /* 카드 그리드 Layout (기술/프로젝트) */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
+        .container {
+            width: 100%;
+            max-width: 460px;
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
         }
 
-        .card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        /* 푸터 */
-        footer {
+        /* Header Section */
+        .profile-header {
+            padding: 36px 28px 24px;
+            background: linear-gradient(180deg, rgba(56, 189, 248, 0.1) 0%, rgba(30, 41, 59, 0) 100%);
+            border-bottom: 1px solid var(--border);
             text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border-color);
-            color: #777;
+        }
+
+        .mbti-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .profile-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .profile-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Body Section */
+        .profile-body {
+            padding: 28px;
+        }
+
+        .info-section {
+            margin-bottom: 24px;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .info-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 12px 14px;
+            border-radius: 12px;
+        }
+
+        .info-item .val {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Tag List */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: var(--badge-bg);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .tag.highlight {
+            background-color: rgba(56, 189, 248, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* Interactive Button */
+        .toggle-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent);
+            color: #0f172a;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .toggle-btn:hover {
+            background-color: var(--accent-hover);
+            color: #ffffff;
+        }
+
+        .secret-box {
+            display: none;
+            margin-top: 14px;
+            padding: 16px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--accent);
+            border-radius: 12px;
             font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .secret-box strong {
+            color: var(--accent);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">MyPortfolio</div>
-            <ul class="nav-links">
-                <li><a href="#about">소개</a></li>
-                <li><a href="#skills">기술</a></li>
-                <li><a href="#projects">설정</a></li>
-                <li><button class="theme-btn" id="themeToggle">다크 모드</button></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <!-- 프로필 상단 -->
+        <div class="profile-header">
+            <span class="mbti-badge">ISTJ</span>
+            <h1 id="name-display">[이름]</h1>
+            <p>차분하고 태평하지만, 내 일은 스스로 깔끔하게 해내는 편</p>
+        </div>
 
-    <main>
-        <!-- Hero / 소개 섹션 -->
-        <section id="about" class="hero">
-            <h1>안녕하세요, 전원희입니다 👋</h1>
-            <p>사용자 경험을 고민하며 코드를 만드는 개발자입니다.</p>
-        </section>
-
-        <!-- 기술 스택 섹션 -->
-        <section id="skills">
-            <h2>technology</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Language</h3>
-                    <p>C, Python, JavaScript</p>
-                </div>
-                <div class="card">
-                    <h3>Web</h3>
-                    <p>HTML5, CSS3, ES6+</p>
-                </div>
-                <div class="card">
-                    <h3>Tools</h3>
-                    <p>Git, VS Code</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 프로젝트 섹션 -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h10>개인 웹사이트 제작</h10>
-                    <p>외부 라이브러리 없이 순수 HTML/CSS/JS로 제작한 반응형 포트폴리오 웹사이트입니다.</p>
-                </div>
-                <div class="card">
-                    <h3>프로젝트 제목 2</h3>
-                    <p>프로젝트에 대한 간단한 설명을 입력하세요. 주요 기능과 사용한 기술을 적으면 좋습니다.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 [이름]. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript logic -->
-    <script>
-        const themeToggleBtn = document.getElementById('themeToggle');
-        
-        // 다크 모드 토글 기능
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme');
+        <!-- 프로필 상세 -->
+        <div class="profile-body">
             
-            if (currentTheme === 'dark') {
-                document.body.removeAttribute('data-theme');
-                themeToggleBtn.textContent = '다크 모드';
+            <!-- 인적사항 -->
+            <div class="info-section">
+                <div class="label">BASIC INFO</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label" style="margin-bottom:2px;">소속</div>
+                        <div class="val">[00대]</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label" style="margin-bottom:2px;">전공</div>
+                        <div class="val">[전공입력]</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label" style="margin-bottom:2px;">학년</div>
+                        <div class="val">1학년 (26학번)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label" style="margin-bottom:2px;">나이</div>
+                        <div class="val">만 19세</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 성격 키워드 -->
+            <div class="info-section">
+                <div class="label">PERSONALITY</div>
+                <div class="tags">
+                    <span class="tag">#느긋함</span>
+                    <span class="tag">#태평함</span>
+                    <span class="tag">#독립적</span>
+                    <span class="tag">#내향적</span>
+                    <span class="tag">#소심함</span>
+                </div>
+            </div>
+
+            <!-- 좋아하는 것 -->
+            <div class="info-section">
+                <div class="label">LIKES</div>
+                <div class="tags">
+                    <span class="tag highlight">🎮 게임하기</span>
+                    <span class="tag highlight">🎬 공포영화 보기</span>
+                </div>
+            </div>
+
+            <!-- 내가 잘하는 것 토글 -->
+            <button class="toggle-btn" onclick="toggleSkill()">⚡ 내가 잘하는 것 확인하기</button>
+            <div class="secret-box" id="skill-box">
+                👻 <strong>공포영화 볼 때 안 놀라고 무덤덤하게 보기</strong><br>
+                🛠️ <strong>한 번 시작한 일이나 과제는 혼자서 깔끔하게 끝내기</strong>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleSkill() {
+            const box = document.getElementById('skill-box');
+            if (box.style.display === 'block') {
+                box.style.display = 'none';
             } else {
-                document.body.setAttribute('data-theme', 'dark');
-                themeToggleBtn.textContent = '라이트 모드';
+                box.style.display = 'block';
             }
-        });
+        }
     </script>
 </body>
 </html>
